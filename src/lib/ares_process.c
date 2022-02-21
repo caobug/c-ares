@@ -1108,7 +1108,7 @@ static int open_tcp_socket(ares_channel channel, struct server_state *server)
 
   if (channel->sock_config_cb)
     {
-      int err = channel->sock_config_cb(s, SOCK_STREAM,
+      int err = channel->sock_config_cb(s, SOCK_STREAM, server->addr.family,
                                         channel->sock_config_cb_data);
       if (err < 0)
         {
@@ -1203,7 +1203,7 @@ static int open_udp_socket(ares_channel channel, struct server_state *server)
 
   if (channel->sock_config_cb)
     {
-      int err = channel->sock_config_cb(s, SOCK_DGRAM,
+      int err = channel->sock_config_cb(s, SOCK_DGRAM, server->addr.family,
                                         channel->sock_config_cb_data);
       if (err < 0)
         {

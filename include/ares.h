@@ -318,6 +318,7 @@ typedef int  (*ares_sock_create_callback)(ares_socket_t socket_fd,
 
 typedef int  (*ares_sock_config_callback)(ares_socket_t socket_fd,
                                           int type,
+                                          int family,
                                           void *data);
 
 typedef void (*ares_addrinfo_callback)(void *arg,
